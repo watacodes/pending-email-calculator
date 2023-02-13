@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 100px;
+  background-color: hsl(0, 0%, 95%);
+}
+
+.page-wrapper {
+  align-items: center;
+  width: 60vw;
+  height: 60vh;
+}
+
+fieldset {
+  margin: 2em 0;
+  padding: 1em 2em;
+  border: solid 1px hsl(0, 0%, 80%);
+  border-radius: 6px;
+  min-width: 200px;
+}
+
+legend {
+  font-size: 2.25rem;
+  padding: 0 .25em;
+  color: #999;
+}
+
+label,
+#calculate-button {
+  display: block;
+  margin-top: 1em;
+}
+
+label:first-of-type {
+  margin: 0;
+}
+
+#calculate-button {
+  padding: .5em 1em;
+  border-radius: 6px;
+  border: #ccc;
+  background-color: #777373;
+  color: #fff;
+  font-size: .8em;
+}
+
+#result-days,
+#result {
+  color: #999;
+}
+
+#result-days {
+  font-size: 2rem;
+}
+
+#result {
+  margin-top: 2rem;
+  line-height: 2rem;
+}

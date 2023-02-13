@@ -1,20 +1,20 @@
 const calculateButton = document.getElementById('calculate-button');
 
 function daysToClearInbox () {
-  const pendingMails = document.getElementById('inbox-mails').value;
-  const incomingMails = document.getElementById('incoming-mails').value;
-  const outgoingMails = document.getElementById('outgoing-mails').value;
+  const pendingEmail = document.getElementById('inbox-email').value;
+  const incomingEmail = document.getElementById('incoming-email').value;
+  const outgoingEmail = document.getElementById('outgoing-email').value;
   const resultDays = document.getElementById('result-days');
   const resultMessage = document.getElementById('result');
-  const daysToComplete = Math.round(pendingMails / (outgoingMails - incomingMails));
+  const daysToSweep = Math.round(pendingEmail / (outgoingEmail - incomingEmail));
 
-  if (daysToComplete < 0) {
+  if (daysToSweep < 0) {
     resultDays.innerText = '';
-    resultMessage.innerText = 'As the number of emails we receive outweighs our daily output, we cannot empty the inbox!';
+    resultMessage.innerText = 'As the number of email we receive outweighs our daily output, we cannot empty the inbox!';
   } else {
-    resultDays.innerText = `We need ${daysToComplete - 1} - ${daysToComplete + 1} days to sweep the inbox!`;
-    resultMessage.innerText = `Currently, we have ${pendingMails} pending emails. 
-    As we receive ${incomingMails} emails a day and we can send ${outgoingMails} emails per day, we require ${daysToComplete - 1} - ${daysToComplete + 1} days to empty the inbox!`;
+    resultDays.innerText = `We need ${daysToSweep - 1} - ${daysToSweep + 1} days to sweep the inbox!`;
+    resultMessage.innerText = `Currently, we have ${pendingEmail} pending email. 
+    As we receive ${incomingEmail} email a day and we can send ${outgoingEmail} email per day, we require ${daysToSweep - 1} - ${daysToSweep + 1} days to empty the inbox!`;
   }
 }
   

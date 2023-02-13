@@ -8,16 +8,13 @@ function daysToClearInbox () {
   const resultMessage = document.getElementById('result');
   const daysToComplete = Math.round(pendingMails / (outgoingMails - incomingMails));
 
-  console.log(typeof incomingMails, typeof outgoingMails)
   if (daysToComplete < 0) {
     resultDays.innerText = '';
-    resultMessage.innerText = 'As the emails we receive outweigh the number of the emails we are sending, we cannot empty the inbox!';
-    resultMessage.color = 'amber';
+    resultMessage.innerText = 'As the number of emails we receive outweighs our daily output, we cannot empty the inbox!';
   } else {
-    resultDays.innerText = `We need ${daysToComplete - 1} to ${daysToComplete + 1} days to sweep the inbox!`;
-    resultDays.style.accentColor = 'olive';
-    resultMessage.innerText = `Currently we have ${pendingMails} pending emails. 
-    As we receive ${incomingMails} emails a day and we can send ${outgoingMails} emails per day, we require ${daysToComplete} days to empty the inbox!`;
+    resultDays.innerText = `We need ${daysToComplete - 1} - ${daysToComplete + 1} days to sweep the inbox!`;
+    resultMessage.innerText = `Currently, we have ${pendingMails} pending emails. 
+    As we receive ${incomingMails} emails a day and we can send ${outgoingMails} emails per day, we require ${daysToComplete - 1} - ${daysToComplete + 1} days to empty the inbox!`;
   }
 }
   
